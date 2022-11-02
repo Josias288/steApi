@@ -1,5 +1,7 @@
 package com.tufergroupe.steapi.model;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
 import lombok.*;
@@ -22,6 +24,7 @@ public class Ravitaillement {
     private int numFournisseur;
     private int quantiteFournie;
     private String typeFournie;
+    private Date dateRavittailement;
 
     public Ravitaillement(Long id, Soute soute, String nomFournisseur, String adressFournisseur, int numFournisseur,
             int quantiteFournie, String typeFournie) {

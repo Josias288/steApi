@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tufergroupe.steapi.model.Soute;
 import com.tufergroupe.steapi.repository.SouteRepository;
@@ -16,10 +17,12 @@ public class SouteService {
     @Autowired
     private SouteRepository souteRepository;
 
+    @Transactional(readOnly = true)
     public Optional<Soute> getSoute(final Long id) {
         return souteRepository.findById(id);
     }
 
+    @Transactional(readOnly = true)
     public Iterable<Soute> getSoutes() {
         return souteRepository.findAll();
     }
