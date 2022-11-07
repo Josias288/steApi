@@ -15,18 +15,15 @@ public class Servic {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Servic() {
-    }
-
     @ManyToOne
     private Vehicule vehicule;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Soute soute;
 
     private String kilometrageVehicule;
 
     private String typeServie;
-    private String quantiteServie;
+    private int quantiteServie;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "dateService")
@@ -82,11 +79,11 @@ public class Servic {
         this.typeServie = typeServie;
     }
 
-    public String getQuantiteServie() {
+    public int getQuantiteServie() {
         return quantiteServie;
     }
 
-    public void setQuantiteServie(String quantiteServie) {
+    public void setQuantiteServie(int quantiteServie) {
         this.quantiteServie = quantiteServie;
     }
 

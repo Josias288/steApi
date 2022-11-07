@@ -58,7 +58,7 @@ public class ServiceController {
     public Servic saveService(@RequestBody Servic service) {
         Soute soute = service.getSoute();
         // Vehicule vehicule = service.getVehicule();
-        int qtServie = Integer.parseInt(service.getQuantiteServie());
+        int qtServie = service.getQuantiteServie();
         int qtSoute = Integer.parseInt(soute.getNiveauContenu());
         int newqtSoute = qtSoute - qtServie;
         soute.setNiveauContenu(String.valueOf(newqtSoute));
